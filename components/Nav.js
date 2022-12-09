@@ -1,12 +1,11 @@
 import Anchor from "./Anchor";
-import styles from '../styles/Home.module.css'
 
 
 
 export default function Nav() {
   return (
     <>
-    <nav className={styles.nav}>
+    <nav className="nav">
         <ul>
             <Anchor href={"/"}>Home</Anchor>
             <Anchor href={"/bands"}>Bands</Anchor>

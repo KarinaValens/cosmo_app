@@ -1,11 +1,13 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Days from '../components/Days'
 import Header from '../components/Header'
-import Schedule from '../components/Schedule'
-import styles from '../styles/Home.module.css'
+import Stages from '../components/Stages'
+import Filtering from '../components/Filtering'
+import Acomodation from '../components/Acomodation'
+import Lineup from '../components/Lineup'
+import Bands from './bands'
 
-export default function Home({schedule}) {
+export default function Home({schedule, bandsName}) {
 const midgard = schedule.Midgard
 console.log(midgard);
 const vanaheim = schedule.Vanaheim
@@ -15,75 +17,69 @@ const jotunheim = schedule.jotunheim
     <>
      <Header />
 
-    <div className={styles.container}>
+    <div className="container">
       <Head>
       <title>The Festival | Schedule</title>
         <meta name="description" content="This is my KEA thrid semester Frontend Elective exam" />
         <meta name="keywords" content="festival, app, schedule, music, exam, reactjs, nextjs"></meta>
       </Head>       
-
-       <main className={styles.main}>
-        <Schedule/>
+      <main className='main'>
+        <Filtering/>
         <Days schedule={schedule}/>  
-        <h3>Midgard</h3>
-        <div className={styles.table}>  
-         {schedule.Midgard.mon.map((show=>{
-        //getting the data for just Monday (one day) destructuring object inside objects
-         return (
-          <>
-          
-            <ul >
-                <li key="z">Act: {show.act}</li> 
-                <li key="y">starts: {show.start}</li> 
-                <li key="x">ends:{show.end}</li> 
-            </ul> 
-          
-         </>
-         )
-         }))}</div>
-           
-             
+            <h3>Midgard</h3>
+            <div className="show-table">  
+            {schedule.Midgard.mon.map((show=>{
+            //getting the data for just Monday (one day) destructuring object inside objects
+            return (
+              <>          
+                <ul >
+                    <li key="z">Act: {show.act}</li> 
+                    <li key="y">starts: {show.start}</li> 
+                    <li key="x">ends:{show.end}</li> 
+                </ul>           
+            </>
+            )
+            }))}</div>
+                        
+            <h3>Vanaheim</h3>
+            <div className="show-table">  
+            {schedule.Vanaheim.mon.map((show=>{
+            //getting the data for just Monday (one day) destructuring object inside objects
+            return (
+              <>
+              
+                <ul >
+                    <li key="z">Act: {show.act}</li> 
+                    <li key="y">starts: {show.start}</li> 
+                    <li key="x">ends:{show.end}</li> 
+                </ul> 
+              
+            </>
+            )
+            }))}</div>
 
-          <h3>Vanaheim</h3>
-          <div className={styles.table}>  
-         {schedule.Vanaheim.mon.map((show=>{
-        //getting the data for just Monday (one day) destructuring object inside objects
-         return (
-          <>
-          
-            <ul >
-                <li key="z">Act: {show.act}</li> 
-                <li key="y">starts: {show.start}</li> 
-                <li key="x">ends:{show.end}</li> 
-            </ul> 
-          
-         </>
-         )
-         }))}</div>
+            <h3>Jotunheim</h3>
+            <div className="show-table">  
+            {schedule.Jotunheim.mon.map((show=>{
+            //getting the data for just Monday (one day) destructuring object inside objects
+            return (
+              <>
+              
+                <ul >
+                    <li key="z">Act: {show.act}</li> 
+                    <li key="y">starts: {show.start}</li> 
+                    <li key="x">ends:{show.end}</li> 
+                </ul> 
+              
+            </>
+            )
+            }))}</div>
 
-          <h3>Jotunheim</h3>
-          <div className={styles.table}>  
-         {schedule.Jotunheim.mon.map((show=>{
-        //getting the data for just Monday (one day) destructuring object inside objects
-         return (
-          <>
-          
-            <ul >
-                <li key="z">Act: {show.act}</li> 
-                <li key="y">starts: {show.start}</li> 
-                <li key="x">ends:{show.end}</li> 
-            </ul> 
-          
-         </>
-         )
-         }))}</div>
-
-
-
-
+        <Stages/>
+        <Acomodation/>
+        <Lineup/>
+      <h2>{bandsName}</h2>
       </main>
-
-
     </div>
     </>
   )
@@ -102,3 +98,4 @@ export async function getServerSideProps() {
     }
   }
 }
+

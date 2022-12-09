@@ -1,8 +1,7 @@
-import styles from '../styles/Home.module.css'
 
-function Footer() {
+export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className="footer">
             <div>
                 <h3>Logo</h3>
                 <p>Cosmos Festival the greatest festival of all the times.</p>
@@ -27,4 +26,4 @@ function Footer() {
   )
 }
 
-export default Footer
+ 

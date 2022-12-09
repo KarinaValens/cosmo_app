@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400;500;700&display=swap");
 
+/* -------------------- // Global Variables // ------------------------------ */
 :root {
   /*   --color-primary1: hsla(258, 36%, 52%, 0.795);
   --color-primary2: hsla(252, 37%, 72%, 0.315);
@@ -7,6 +8,7 @@
   --color-secondary2: hsl(29, 78%, 78%); */
   --color-accent1: hsl(181, 98%, 52%);
   --color-accent2: hsl(301, 100%, 50%);
+  --color-accent3: hsl(151, 95%, 50%);
   /* --color-neutral1: hsl(0, 0%, 3%);
   --color-neutral2: hsl(120, 19%, 94%, 0.35); */
   /* ---- //Fonts Variables (Custom Properties// -----*/
@@ -28,13 +30,28 @@
   --color-neutral2: hsl(120, 19%, 94%, 0.35);
 } */
 
+/* --------------------- // Reset // -------------------------------- */
+
+* {
+  box-sizing: border-box;
+  border: dotted 1px hotpink;
+}
+
 html,
-body {
+body,
+p,
+a,
+ul,
+li {
+  text-decoration: none;
+  list-style-type: none;
   padding: 0;
   margin: 0;
   font-family: "Roboto Mono", monospace;
 }
 
+/* ------------------ // Base Styles // ----------------------------- */
+/* ---- // Fonts // ---------- */
 h1,
 h2,
 h3,
@@ -43,18 +60,217 @@ h5,
 h6 {
   font-family: var(--font-headings);
 }
-
-li {
-  list-style: none;
+h1 {
+  font: 100 5rem/1 var(--font-headings);
+}
+/* -------------------- // section´s style// -----------------------  */
+.container {
+  padding: 0 2rem;
 }
 
-a {
-  color: inherit;
+.header {
+  background: url(../public/media/Rectangle\ 30.png) no-repeat top;
+  /* This images is a place holder */
+  background-size: cover;
+  text-align: center;
+  /* height: fit-content; */
+}
+
+.main {
+  /* min-height: 100vh; */
+  /* flex: 1; */
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .nav ul {
+  display: flex;
+  gap: 2rem;
+} */
+
+/* --------------------- // Main Sections & Elements style // ---------------------- */
+
+/* ------- // Hero Section // ----------- */
+
+.title {
+  margin: 0;
+  color: var(--color-accent1);
+  font-weight: 400;
+}
+
+.title a {
+  color: #0070f3;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.logo {
+  margin: 1rem 8rem;
+}
+
+.title,
+.logo {
+  text-align: center;
+}
+
+/* ------- // Filtering & Searching  Section // ----------- */
+
+.input {
+  border: solid 1px var(--color-accent2);
+  margin: 2rem;
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+}
+
+/* ------- // Shows  Section // ----------- */
+/* ------- // Days // --------- */
+.button {
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+}
+
+.grid {
+  gap: 0.8rem;
+  width: 80%;
+  margin: 2rem auto;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.grid,
+.footer,
+.footer a,
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid,
+.card {
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+/* ------- // Shows // --------- */
+
+.show-table {
+  max-width: 100%;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  border-bottom: solid 3px var(--color-accent2);
+}
+
+.show-table ul {
+  padding-left: 0.5rem;
+}
+.show-table li {
+  font-size: small;
+}
+
+/* --------------- // Stages & Acomodation // ---------------------- */
+
+p {
+  font: small var(--font-headings);
+  margin: 1rem auto;
+}
+.card {
+  flex-direction: column;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  width: 8rem;
+}
+
+.stages p:first-child {
+  margin-bottom: 0;
+}
+
+.stages {
+  border: 1px solid var(--color-accent2);
+}
+
+.acomodation {
+  border: 1px solid var(--color-accent3);
+}
+
+.camping {
+  color: var(--color-accent3);
+}
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+/* a {
+  color: inherit;
+} */
+
+/* --------------- // Footer // ----------------------- */
+.footer {
+  /*   flex-direction: column;
+ */
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+}
+
+.footer a {
+  flex-grow: 1;
+}
+/* .code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+} */
+
+/* small tablet styles */
+@media screen and (min-width: 620px) {
+  h1 {
+    font: 100 10rem/1.15 var(--font-headings);
+  }
+  .show-table {
+    max-width: 80%;
+    margin: auto;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+  .show-table li {
+    font-size: medium;
+  }
+}
+/* large tablets and laptop styles */
+@media screen and (min-width: 960px) {
+  .show-table {
+    width: 80%;
+    margin: auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .card {
+    width: 12rem;
+  }
+}
+
+/* destop styles */
+@media screen and (min-width: 1200px) {
 }
 
 @media (prefers-color-scheme: dark) {
