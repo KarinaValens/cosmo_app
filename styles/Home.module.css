@@ -2,19 +2,36 @@
   padding: 0 2rem;
 }
 
+.nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.header {
+  background: url(../public/media/Rectangle\ 30.png) no-repeat top;
+  /* This images is a place holder */
+  background-size: cover;
+  max-width: 100%;
+  height: fit-content;
+}
+
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-
+.input {
+  border: solid 1px var(--color-accent2);
+  margin: 2rem;
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+}
 .footer {
   display: flex;
   flex: 1;
+  gap: 1.4rem;
   padding: 2rem 0;
   border-top: 1px solid #eaeaea;
   justify-content: center;
@@ -41,8 +58,8 @@
 
 .title {
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  font: 100 20rem/1.15 var(--font-headings);
+  color: var(--color-accent1);
 }
 
 .title,
@@ -61,8 +78,7 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 .grid {
