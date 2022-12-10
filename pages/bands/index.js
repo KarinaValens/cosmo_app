@@ -9,7 +9,7 @@ console.log(bands);
       {bands.map((band) => (
         <div key={band.name + Date.now()}>
           <Link href={`bands/${band.name}`}>
-            <h3 bandsName={band.name}>{band.name}</h3>
+            <h3 name="bandName">{band.name}</h3>
           </Link>
         </div>
       ))}
