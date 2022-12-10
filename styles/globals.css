@@ -125,7 +125,8 @@ h1 {
 
 .input {
   border: solid 1px var(--color-accent2);
-  margin: 2rem;
+  max-width: auto;
+  margin: auto 1rem;
   padding: 0.5rem 1.5rem;
   background-color: transparent;
 }
@@ -136,6 +137,7 @@ h1 {
   background-color: transparent;
   border: none;
   padding: 1rem;
+  color: var(--color-accent1);
 }
 
 .grid {
@@ -200,7 +202,7 @@ p {
   margin-bottom: 0;
 }
 
-.stages {
+.accent2 {
   border: 1px solid var(--color-accent2);
 }
 
@@ -208,9 +210,10 @@ p {
   border: 1px solid var(--color-accent3);
 }
 
-.camping {
+.accent3 {
   color: var(--color-accent3);
 }
+
 .card:hover,
 .card:focus,
 .card:active {
@@ -221,6 +224,13 @@ p {
 /* a {
   color: inherit;
 } */
+
+/* ------------ // Lineup // -------------- */
+.bands li{
+font-size: small;
+color: var(--color-accent1);
+}
+
 
 /* --------------- // Footer // ----------------------- */
 .footer {
@@ -256,6 +266,10 @@ p {
   .show-table li {
     font-size: medium;
   }
+
+  .bands li{
+    font-size: medium;
+    }
 }
 /* large tablets and laptop styles */
 @media screen and (min-width: 960px) {

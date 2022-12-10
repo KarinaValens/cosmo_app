@@ -6,7 +6,7 @@ export default  function Days({schedule}) {
 
   const [filter, setFilter] = useState("");
 
-  const filtered = schedule.midgard.filter(day => Object.keys(schedule)===filter)
+  //const filtered = schedule.midgard.filter(day => Object.keys(schedule)===filter)
 
    // useEffect(callback, [dependencies]);
 

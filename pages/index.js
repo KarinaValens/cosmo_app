@@ -5,13 +5,25 @@ import Stages from '../components/Stages'
 import Filtering from '../components/Filtering'
 import Acomodation from '../components/Acomodation'
 import Lineup from '../components/Lineup'
-import { useState } from 'react'
+import BandsCards from '../components/BandsCards'
+import { useState, useEffect } from 'react'
 
-export default function Home({schedule}) {
+export default function Home({schedule, name}) {
   const stages= Object.keys(schedule)
 
 //the following line is destructuring nested object and it gives me back the content from Midgar
   const {Midgard:{mon,tue,wen,thu,fri,sat,don}}=schedule;
+
+  const [bands, setBands]=useState([]);
+
+  useEffect(()=>{
+  async function fetchBands(){
+    const res= await fetch ("http://localhost:8080/bands")
+    const bands=await res.json();
+    setBands(bands);
+     } fetchBands()},[])
+
+
 
   return (
     <>
@@ -82,8 +94,9 @@ export default function Home({schedule}) {
             }))}</div>
         <Stages/>
         <Acomodation/>
-        <Lineup/>
-           
+        <Lineup bands={bands}/>
+        <BandsCards bands={bands}/>
+                  
       </main>
     </div>
     </>
