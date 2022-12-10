@@ -7,15 +7,18 @@ import Acomodation from '../components/Acomodation'
 import Lineup from '../components/Lineup'
 import BandsCards from '../components/BandsCards'
 import { useState, useEffect } from 'react'
+import TicketsDiv from '../components/TicketsDiv'
+import Midgard from '../components/Midgard'
+import Vanaheim from '../components/Vanaheim'
+import Jotunheim from '../components/Jotunheim'
 
-export default function Home({schedule, name}) {
+export default function Home({schedule}) {
   const stages= Object.keys(schedule)
 
 //the following line is destructuring nested object and it gives me back the content from Midgar
-  const {Midgard:{mon,tue,wen,thu,fri,sat,don}}=schedule;
+  const {Midgard:{mon,tue,wen,thu,fri,sat,don}} = schedule;
 
-  const [bands, setBands]=useState([]);
-
+   const [bands, setBands]=useState([]);
   useEffect(()=>{
   async function fetchBands(){
     const res= await fetch ("http://localhost:8080/bands")
@@ -38,64 +41,15 @@ export default function Home({schedule, name}) {
       <main className='main'>
         <Filtering/>
         <Days schedule={schedule}/> 
-       
-               <h3>{stages[0]}</h3>
 
-
-           <div className="show-table">  
-            {mon.map((show=>{
-            //getting the data for just Monday (one day) destructuring object inside objects
-            return (
-              <>          
-                <ul >
-                    <li key="z">Act: {show.act}</li> 
-                    <li key="y">starts: {show.start}</li> 
-                    <li key="x">ends:{show.end}</li> 
-                </ul>           
-            </>
-            )
-            }))}</div>
-
-
-
-
-          <h3>{stages[1]}</h3>
-            <div className="show-table">  
-            {mon.map((show=>{
-            //getting the data for just Monday (one day) destructuring object inside objects
-            return (
-              <>              
-                <ul >
-                    <li key="z">Act: {show.act}</li> 
-                    <li key="y">starts: {show.start}</li> 
-                    <li key="x">ends:{show.end}</li> 
-                </ul> 
-              
-            </>
-            )
-            }))}</div>
-
-          <h3>{stages[2]}</h3>
-
-            <div className="show-table">  
-            {mon.map((show=>{
-            //getting the data for just Monday (one day) destructuring object inside objects
-            return (
-              <>
-              
-                <ul >
-                    <li key="z">Act: {show.act}</li> 
-                    <li key="y">starts: {show.start}</li> 
-                    <li key="x">ends:{show.end}</li> 
-                </ul> 
-              
-            </>
-            )
-            }))}</div>
+       <Midgard schedule={schedule}/>
+       <Vanaheim schedule={schedule}/>
+       <Jotunheim schedule={schedule}/>
         <Stages/>
         <Acomodation/>
         <Lineup bands={bands}/>
-        <BandsCards bands={bands}/>
+        {/* <BandsCards bands={bands}/> */}
+        <TicketsDiv/>
                   
       </main>
     </div>

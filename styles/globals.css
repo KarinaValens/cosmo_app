@@ -34,7 +34,7 @@
 
 * {
   box-sizing: border-box;
-  border: dotted 1px hotpink;
+  /* border: dotted 1px hotpink; */
 }
 
 html,
@@ -52,9 +52,6 @@ li {
 
 /* ------------------ // Base Styles // ----------------------------- */
 /* ---- // Fonts // ---------- */
-h1,
-h2,
-h3,
 h4,
 h5,
 h6 {
@@ -63,6 +60,33 @@ h6 {
 h1 {
   font: 100 5rem/1 var(--font-headings);
 }
+h2 {
+  font: 400 1.6rem/1 var(--font-headings);
+  color: var(--color-accent1);
+}
+h3 {
+  font: 300 1.5rem/1 var(--font-headings);
+}
+
+/* ----------- // Colors // -------------- */
+.accent1 {
+  color: var(--color-accent1);
+}
+
+.accent2 {
+  color: var(--color-accent2);
+}
+.accent3 {
+  color: var(--color-accent3);
+}
+
+.border1 {
+  border: 1px solid var(--color-accent1);
+}
+.border2 {
+  border: 1px solid var(--color-accent2);
+}
+
 /* -------------------- // section´s style// -----------------------  */
 .container {
   padding: 0 2rem;
@@ -86,19 +110,13 @@ h1 {
   align-items: center;
 }
 
-/* .nav ul {
-  display: flex;
-  gap: 2rem;
-} */
-
 /* --------------------- // Main Sections & Elements style // ---------------------- */
 
 /* ------- // Hero Section // ----------- */
 
 .title {
   margin: 0;
-  color: var(--color-accent1);
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .title a {
@@ -123,21 +141,37 @@ h1 {
 
 /* ------- // Filtering & Searching  Section // ----------- */
 
+.flex-container {
+  gap: 2rem;
+}
+
 .input {
-  border: solid 1px var(--color-accent2);
   max-width: auto;
-  margin: auto 1rem;
   padding: 0.5rem 1.5rem;
   background-color: transparent;
 }
 
+.icon-container {
+  position: relative;
+}
+.icon {
+  position: absolute;
+  top: 22%;
+  left: 3%;
+}
+
 /* ------- // Shows  Section // ----------- */
 /* ------- // Days // --------- */
+
 .button {
   background-color: transparent;
-  border: none;
   padding: 1rem;
+  border: none;
   color: var(--color-accent1);
+}
+
+.button:active {
+  border: 1px solid var(--color-accent1);
 }
 
 .grid {
@@ -151,14 +185,16 @@ h1 {
 .grid,
 .footer,
 .footer a,
-.card {
+.card,
+.flex-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .grid,
-.card {
+.card,
+.flex-container {
   flex-wrap: wrap;
   max-width: 800px;
 }
@@ -177,6 +213,7 @@ h1 {
 .show-table ul {
   padding-left: 0.5rem;
 }
+
 .show-table li {
   font-size: small;
 }
@@ -187,6 +224,7 @@ p {
   font: small var(--font-headings);
   margin: 1rem auto;
 }
+
 .card {
   flex-direction: column;
   margin: 1rem;
@@ -202,16 +240,8 @@ p {
   margin-bottom: 0;
 }
 
-.accent2 {
-  border: 1px solid var(--color-accent2);
-}
-
 .acomodation {
   border: 1px solid var(--color-accent3);
-}
-
-.accent3 {
-  color: var(--color-accent3);
 }
 
 .card:hover,
@@ -226,11 +256,10 @@ p {
 } */
 
 /* ------------ // Lineup // -------------- */
-.bands li{
-font-size: small;
-color: var(--color-accent1);
+.bands li {
+  font-size: small;
+  color: var(--color-accent1);
 }
-
 
 /* --------------- // Footer // ----------------------- */
 .footer {
@@ -258,6 +287,15 @@ color: var(--color-accent1);
   h1 {
     font: 100 10rem/1.15 var(--font-headings);
   }
+
+  h2 {
+    font: 400 2rem/1 var(--font-headings);
+  }
+
+  h3 {
+    font: 300 1.5rem/1 var(--font-headings);
+  }
+
   .show-table {
     max-width: 80%;
     margin: auto;
@@ -267,9 +305,9 @@ color: var(--color-accent1);
     font-size: medium;
   }
 
-  .bands li{
+  .bands li {
     font-size: medium;
-    }
+  }
 }
 /* large tablets and laptop styles */
 @media screen and (min-width: 960px) {

@@ -6,24 +6,24 @@ export default function Acomodation() {
    
     <div className='grid'>
     <div className='card acomodation'>
-    <p>SVARTHEIM</p>
+    <p className='accent3'>SVARTHEIM</p>
     </div>
     <div className='card acomodation'>
-    <p>NILFHEIM</p>
+    <p className='accent3'>NILFHEIM</p>
     </div>
     </div>
 
-    <h2 className='title camping'>Camping area</h2>
+    <h2 className='title accent3'>Camping area</h2>
 
     <div className='grid'>
     <div className='card acomodation'>
-    <p>HELHEIM</p>
+    <p className='accent3'>HELHEIM</p>
     </div>
     <div className='card acomodation'>
-    <p>MUSPELHEIM</p>
+    <p className='accent3'>MUSPELHEIM</p>
     </div>
     <div className='card acomodation'>
-    <p>ALFHEIM</p>
+    <p className='accent3'>ALFHEIM</p>
     </div>
     </div>
     </>

@@ -10,7 +10,7 @@ export default function Header() {
         <a  href={"/"}>
           <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </a>
-        <h1 className="title">COSMOS</h1>
+        <h1 className="title accent1">COSMOS</h1>
         <div className="grid">
             <p>15</p>
             <p>16</p>
