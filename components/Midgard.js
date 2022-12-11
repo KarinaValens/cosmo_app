@@ -8,14 +8,14 @@ export default function Midgard({schedule}) {
 
   return (
     <>
-      <h3>{stageName[0]}</h3>
+      <h3 className="accent2">{stageName[0]}</h3>
        <div className="show-table">  
         {mon.map((show=>{
         //getting the data for just Monday (one day) destructuring object inside objects
         return (
         <>          
             <ul >
-                <li key="z">Act: {show.act}</li> 
+                <li className="accent2" key="z">Act: {show.act}</li> 
                 <li key="y">starts: {show.start}</li> 
                 <li key="x">ends:{show.end}</li> 
             </ul>           

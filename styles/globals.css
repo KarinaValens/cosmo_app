@@ -9,32 +9,21 @@
   --color-accent1: hsl(181, 98%, 52%);
   --color-accent2: hsl(301, 100%, 50%);
   --color-accent3: hsl(151, 95%, 50%);
-  /* --color-neutral1: hsl(0, 0%, 3%);
-  --color-neutral2: hsl(120, 19%, 94%, 0.35); */
+  --color-accent4: hsl(68, 87%, 51%);
+  --color-accent5: hsl(42, 98%, 50%);
+  --color-accent6: hsl(295, 99%, 28%);
+  --color-accent7: hsl(17, 100%, 56%);
+  --color-neutral1: hsl(0, 0%, 3%);
+  --color-neutral2: rgb(255, 255, 255);
   /* ---- //Fonts Variables (Custom Properties// -----*/
   --font-headings: "Roboto Mono", monospace;
-  /*   --font-copy-text: "Poppins", sans-serif;
- */
 }
-
-/* .dark-theme {
-  --color-primary1: hsl(260, 57%, 15%);
-  --color-primary2: hsl(253, 43%, 27%);
-  --color-gradient1: linear-gradient(135deg, var(--color-primary1), var(--color-secondary1));
-  --color-gradient2: linear-gradient(135deg, var(--color-neutral1) 35%, var(--color-primary2));
-  --color-gradient3: linear-gradient(135deg, var(--color-secondary2) 40%, var(--color-secondary1));
-  --color-secondary1: rgba(222, 215, 206, 0.79);
-  --color-secondary2: hsl(29, 42%, 58%);
-  --color-accent2: hsl(305, 58%, 34%);
-  --color-neutral1: hsl(0, 0%, 3%);
-  --color-neutral2: hsl(120, 19%, 94%, 0.35);
-} */
 
 /* --------------------- // Reset // -------------------------------- */
 
 * {
   box-sizing: border-box;
-  /* border: dotted 1px hotpink; */
+  border: dotted 1px hotpink;
 }
 
 html,
@@ -58,7 +47,7 @@ h6 {
   font-family: var(--font-headings);
 }
 h1 {
-  font: 100 5rem/1 var(--font-headings);
+  font: 200 6rem/1 var(--font-headings);
 }
 h2 {
   font: 400 1.6rem/1 var(--font-headings);
@@ -80,6 +69,23 @@ h3 {
   color: var(--color-accent3);
 }
 
+.accent4 {
+  color: var(--color-accent4);
+}
+.accent5 {
+  color: var(--color-accent5);
+}
+.accent6 {
+  color: var(--color-accent6);
+}
+.accent7 {
+  color: var(--color-accent6);
+}
+
+.border0 {
+  border: none;
+}
+
 .border1 {
   border: 1px solid var(--color-accent1);
 }
@@ -89,20 +95,20 @@ h3 {
 
 /* -------------------- // section´s style// -----------------------  */
 .container {
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+  flex: 1 1 200px;
 }
 
 .header {
-  background: url(../public/media/Rectangle\ 30.png) no-repeat top;
+  background: hsla(0, 0%, 0%, 0.525) url(../public/media/Rectangle\ 30.png) no-repeat top;
   /* This images is a place holder */
   background-size: cover;
+  background-blend-mode: multiply;
   text-align: center;
-  /* height: fit-content; */
+  margin-bottom: 1rem;
 }
 
 .main {
-  /* min-height: 100vh; */
-  /* flex: 1; */
   max-width: 100%;
   margin: auto;
   display: flex;
@@ -117,6 +123,8 @@ h3 {
 .title {
   margin: 0;
   font-weight: 300;
+  opacity: 0.3;
+  letter-spacing: 0.4%;
 }
 
 .title a {
@@ -146,18 +154,21 @@ h3 {
 }
 
 .input {
-  max-width: auto;
-  padding: 0.5rem 1.5rem;
+  text-align: center;
+  padding: 1rem 1.5rem;
   background-color: transparent;
 }
 
-.icon-container {
+.iconContainer {
   position: relative;
+  gap: 2rem;
+  margin: 1rem;
 }
+
 .icon {
   position: absolute;
-  top: 22%;
-  left: 3%;
+  top: 34%;
+  left: 6%;
 }
 
 /* ------- // Shows  Section // ----------- */
@@ -166,8 +177,6 @@ h3 {
 .button {
   background-color: transparent;
   padding: 1rem;
-  border: none;
-  color: var(--color-accent1);
 }
 
 .button:active {
@@ -183,10 +192,11 @@ h3 {
 }
 
 .grid,
-.footer,
-.footer a,
 .card,
-.flex-container {
+.flex-container,
+.tickets-info,
+.container,
+.iconContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,8 +206,9 @@ h3 {
 .card,
 .flex-container {
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 90%;
 }
+
 /* ------- // Shows // --------- */
 
 .show-table {
@@ -261,26 +272,70 @@ p {
   color: var(--color-accent1);
 }
 
-/* --------------- // Footer // ----------------------- */
-.footer {
-  /*   flex-direction: column;
- */
-  flex-wrap: wrap;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+/* ------------ // Tickets // -------------- */
+
+.tickets-info,
+.container {
+  flex-direction: column;
 }
 
-.footer a {
-  flex-grow: 1;
+.tickets-info button {
+  margin-top: 2rem;
 }
-/* .code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-} */
+
+.tickets-info li {
+  list-style: disc;
+}
+.tickets-info li,
+.container li {
+  font-size: small;
+}
+
+.tickets-div {
+  position: relative;
+}
+
+.regular,
+.vip {
+  text-align: center;
+  width: 10rem;
+  height: 5rem;
+  color: var(--color-neutral1);
+  padding: 2rem;
+  margin: 0.5rem;
+}
+.regular {
+  background-color: var(--color-accent3);
+}
+.vip {
+  background-color: var(--color-accent5);
+}
+
+/* --------------- // Footer // ----------------------- */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--color-accent2);
+  margin: 2rem auto;
+  justify-content: space-around;
+  width: 90%;
+  gap: 2rem;
+}
+
+.footer p {
+  padding-left: 1.5rem;
+}
+.footer form {
+  max-width: 100%;
+}
+
+.input-footer,
+.button-footer {
+  padding: 0.8rem 1rem;
+  width: 100%;
+  background-color: transparent;
+  text-align: center;
+}
 
 /* small tablet styles */
 @media screen and (min-width: 620px) {
@@ -296,6 +351,9 @@ p {
     font: 300 1.5rem/1 var(--font-headings);
   }
 
+  .headerDays {
+    max-width: 50%;
+  }
   .show-table {
     max-width: 80%;
     margin: auto;
@@ -305,8 +363,21 @@ p {
     font-size: medium;
   }
 
-  .bands li {
+  .bands li,
+  .footer p,
+  .tickets-info p,
+  .tickets-info li,
+  .footer li {
     font-size: medium;
+  }
+
+  .regular,
+  .vip {
+    width: 15rem;
+    height: 5rem;
+  }
+  .tickets-info {
+    max-width: 50%;
   }
 }
 /* large tablets and laptop styles */

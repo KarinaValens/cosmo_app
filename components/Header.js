@@ -10,15 +10,15 @@ export default function Header() {
         <a  href={"/"}>
           <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </a>
-        <h1 className="title accent1">COSMOS</h1>
-        <div className="grid">
-            <p>15</p>
-            <p>16</p>
-            <p>17</p>
-            <p>18</p>
-            <p>19</p>
-            <p>20</p>
-            <p>21</p>
+        <h1 className="title accent1">COSMO</h1>
+        <div className="grid headerDays">
+            <p className="accent2">15</p>
+            <p className="accent1">16</p>
+            <p className="accent7">17</p>
+            <p className="accent4">18</p>
+            <p className="accent6">19</p>
+            <p className="accent3">20</p>
+            <p className="accent5">21</p>
         </div>
     </div>
   )

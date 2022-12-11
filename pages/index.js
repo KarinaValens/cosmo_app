@@ -13,10 +13,6 @@ import Vanaheim from '../components/Vanaheim'
 import Jotunheim from '../components/Jotunheim'
 
 export default function Home({schedule}) {
-  const stages= Object.keys(schedule)
-
-//the following line is destructuring nested object and it gives me back the content from Midgar
-  const {Midgard:{mon,tue,wen,thu,fri,sat,don}} = schedule;
 
    const [bands, setBands]=useState([]);
   useEffect(()=>{
@@ -41,10 +37,9 @@ export default function Home({schedule}) {
       <main className='main'>
         <Filtering/>
         <Days schedule={schedule}/> 
-
-       <Midgard schedule={schedule}/>
-       <Vanaheim schedule={schedule}/>
-       <Jotunheim schedule={schedule}/>
+        <Midgard schedule={schedule}/>
+        <Vanaheim schedule={schedule}/>
+        <Jotunheim schedule={schedule}/>
         <Stages/>
         <Acomodation/>
         <Lineup bands={bands}/>

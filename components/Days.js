@@ -13,13 +13,13 @@ export default  function Days({schedule}) {
   return (
 <>
     <ul className="grid">
-    <button onClick={()=>setFilter(mon)} className="button">Monday</button>
-    <button onClick={()=>setFilter(tue)} className="button">Thuesday</button>
-    <button onClick={()=>setFilter(wed)} className="button">Wednesday</button>
-    <button onClick={()=>setFilter(the)} className="button">Thursday</button>
-    <button onClick={()=>setFilter(fri)} className="button">Friday</button>
-    <button onClick={()=>setFilter(sat)} className="button">Saturaday</button>
-    <button onClick={()=>setFilter(sun)} className="button">Sunday</button>
+    <button onClick={()=>setFilter(mon)} className="button border0 accent1">Monday</button>
+    <button onClick={()=>setFilter(tue)} className="button border0 accent1">Thuesday</button>
+    <button onClick={()=>setFilter(wed)} className="button border0 accent1">Wednesday</button>
+    <button onClick={()=>setFilter(the)} className="button border0 accent1">Thursday</button>
+    <button onClick={()=>setFilter(fri)} className="button border0 accent1">Friday</button>
+    <button onClick={()=>setFilter(sat)} className="button border0 accent1">Saturaday</button>
+    <button onClick={()=>setFilter(sun)} className="button border0 accent1">Sunday</button>
     </ul>
     </>)
   
