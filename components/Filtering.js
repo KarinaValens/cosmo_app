@@ -6,12 +6,12 @@ export default function Filtering() {
 
   return (
     <div className="flex-container">
-      <div className="icon-container">
+      <div className="iconContainer">
       <Image  className="icon" src={bi_search} alt={""} width={"15"} height={"15"} priority sizes="(max-width: 700px) 100vw, 700px" />
       <input className="input border1" type="text" placeholder='Search by band name'/>
 
       </div>
-      <div className="icon-container">
+      <div className="iconContainer">
       <Image  className="icon" src={bi_filter_right} alt={""} width={"15"} height={"15"} priority sizes="(max-width: 700px) 100vw, 700px" />
       <input className="input border1" type="text" placeholder='FIlter by genre'/>
       </div>

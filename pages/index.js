@@ -43,7 +43,7 @@ export default function Home({schedule}) {
         <Stages/>
         <Acomodation/>
         <Lineup bands={bands}/>
-        {/* <BandsCards bands={bands}/> */}
+        <BandsCards bands={bands}/>
         <TicketsDiv/>
                   
       </main>

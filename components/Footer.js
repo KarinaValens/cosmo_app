@@ -7,13 +7,15 @@ import youtube from "../public/media/youtube.png" // it is necesary import the i
 export default function Footer() {
   return (
     <footer className="footer">
-            <div className="container">            
+            <div className="container"> 
+                <a  href={"/"}>     
                 <Image src={dark_theme_logo} alt={""} width={"70"} height={"50"} priority sizes="(max-width: 700px) 100vw, 700px" />
-                <p className="accent1">Cosmos Festival the greatest festival of all the times.</p>
+                </a>
+                <p className="accent1">Cosmo Festival the greatest festival of all the times.</p>
             </div>
             <div className="container">
                 <h4 className="accent1">Sign up to our newsletter</h4>
-                <p>Sign up to our newsletter and stay up to date with the new show, bands , promotions and more.</p>
+                <p>Stay up to date with the new show, bands , promotions and more.</p>
                 <form className="">
                     <input className="input-footer border2" placeholder="John Doe"/>
                     <input className="input-footer border2" placeholder="johndoe@mail.com"/>
