@@ -23,7 +23,7 @@
 
 * {
   box-sizing: border-box;
-  /* border: dotted 1px hotpink; */
+  border: dotted 1px hotpink;
 }
 
 html,
@@ -102,7 +102,8 @@ h3 {
   flex: 1 1 200px;
 }
 
-.header {
+.header,
+.bandPageHero {
   background: hsla(0, 0%, 0%, 0.525) url(../public/media/place_holder.png) no-repeat top;
   /* This images is a place holder */
   background-size: cover;
@@ -366,6 +367,29 @@ p {
   text-align: center;
 }
 
+/* --------------- // Bands Pages // ----------------------- */
+.bandPageHero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bandPageTitle {
+  font: 200 2rem/1 var(--font-headings);
+}
+
+.bandPageHero p {
+  font-size: 0.5rem;
+}
+.bandPageHero li {
+  font-size: 0.6rem;
+}
+
+.bandBio {
+  padding: 1rem;
+}
+
 /* small tablet styles */
 @media screen and (min-width: 620px) {
   h1 {
@@ -422,6 +446,23 @@ p {
   .footer p {
     padding-left: 0%;
   }
+
+  .bandpage {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .bandpage div:last-child {
+    max-width: 30%;
+  }
+  /*  .showDate {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    background-color: var(--color-neutral1);
+    max-width: 25vw;
+    height: 60vw;
+  } */
 }
 /* large tablets and laptop styles */
 @media screen and (min-width: 960px) {

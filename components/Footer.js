@@ -1,8 +1,8 @@
 import Image from "next/image"//this module automaticaly automise the img with Squoosh
 import dark_theme_logo from "../public/media/dark_theme_logo.png" // it is necesary import the images as so
-import instagram from "../public/media/instagram.png" // it is necesary import the images as so
-import facebook from "../public/media/facebook.png" // it is necesary import the images as so
-import youtube from "../public/media/youtube.png" // it is necesary import the images as so
+import instagram from "../public/media/instagram.png" 
+import facebook from "../public/media/facebook.png" 
+import youtube from "../public/media/youtube.png" 
 
 export default function Footer() {
   return (

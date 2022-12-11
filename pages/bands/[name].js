@@ -1,5 +1,11 @@
-
 import{useRouter} from "next/router"
+import Image from "next/image"//this module automaticaly automise the img with Squoosh
+import dark_theme_logo from "/public/media/dark_theme_logo.png" 
+import instagram from "/public/media/instagram.png" 
+import facebook from "/public/media/facebook.png" 
+import youtube from "/public/media/youtube.png" 
+
+
 
 export default function Band ({bands}) {
     const router = useRouter();
@@ -8,18 +14,36 @@ export default function Band ({bands}) {
 
     
     return (
-    <>   
-    <h1>{band.name}</h1>
-    <p>Genre: {band.genre}</p>
+    <> 
+    <div className="bandpage"> 
+    <div className="bandPageHero"> 
+        <h1 className="bandPageTitle accent1">{band.name}</h1>
 {/*     <Image alt={band.name} src={band.logo} width={200} height={200} />
- */}    <h3>Band`s Members</h3>    
-    <ul>
-      {band.members.map((member,index)=>{
-      return <li key={index}>{member}</li>
-      })}
-    </ul>
-    <h3>About {band.name}</h3>
-    <p>{band.bio}</p>
+ */}    <h4 className="accent1">Band`s Members</h4>    
+        <ul>
+          {band.members.map((member,index)=>{
+          return <li key={index}>{member}</li>
+          })}
+        </ul>
+         <p className="accent3">{band.logoCredits}</p>
+    </div>
+    <div className="container showDate">
+        <a  href={"/"}>
+          <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
+        </a>
+        <h2>20 DEC</h2>
+        <p>MIDGARD STAGE</p>
+        <div className="iconContainer"> 
+              <Image src={instagram} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
+              <Image src={facebook} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
+              <Image src={youtube} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
+              </div>
+    </div>
+    </div>
+    <div className="bandBio">    
+      <h4>About {band.name}</h4>
+      <p>{band.bio}</p>
+    </div>
     </>
   )
 }
