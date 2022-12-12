@@ -14,7 +14,7 @@ import Jotunheim from '../components/Jotunheim'
 
 export default function Home({schedule}) {
 
-   const [bands, setBands]=useState([]);
+  const [bands, setBands]=useState([]);
   useEffect(()=>{
   async function fetchBands(){
     const res= await fetch ("http://localhost:8080/bands")
@@ -22,6 +22,8 @@ export default function Home({schedule}) {
     setBands(bands);
      } fetchBands()},[])
 
+     //const { Midgard : {mon, tue , wen , thu , fri , sat ,sun}}= schedule;
+   const [filter, setFilter] = useState("mon");
 
 
   return (
@@ -36,13 +38,14 @@ export default function Home({schedule}) {
       </Head>       
       <main className='main'>
         <Filtering/>
-        <Days schedule={schedule}/> 
-        <Midgard schedule={schedule}/>
-        <Vanaheim schedule={schedule}/>
-        <Jotunheim schedule={schedule}/>
+        <Days schedule={schedule} setFilter={setFilter}/> 
+        <Midgard schedule={schedule} filter={filter}/>
+        <Vanaheim schedule={schedule} filter={filter}/>
+        <Jotunheim schedule={schedule} filter={filter}/>
         <Stages/>
         <Acomodation/>
-        <Lineup bands={bands}/>
+        <Days setFilter={setFilter}/>
+        <Lineup bands={bands} schedule={schedule} filter={filter}/>
         <BandsCards bands={bands}/>
         <TicketsDiv/>
                   
@@ -57,7 +60,7 @@ export async function getServerSideProps() {
   // Get data from api
   const res = await fetch("http://localhost:8080/schedule");
   const data = await res.json();
-  
+  // you can do several url 
   // Return the data inside props
   return {
     props: {

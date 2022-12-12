@@ -23,7 +23,7 @@
 
 * {
   box-sizing: border-box;
-  border: dotted 1px hotpink;
+  /* border: dotted 1px hotpink; */
 }
 
 html,
@@ -37,6 +37,9 @@ li {
   padding: 0;
   margin: 0;
   font-family: "Roboto Mono", monospace;
+}
+body {
+  background-color: hsl(0, 0%, 9%);
 }
 
 /* ------------------ // Base Styles // ----------------------------- */
@@ -183,8 +186,8 @@ h3 {
   padding: 1rem;
 }
 
-.active,
-.button:active {
+
+.button:focus {
   border: 1px solid var(--color-accent1);
 }
 

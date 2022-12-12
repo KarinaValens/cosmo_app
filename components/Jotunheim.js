@@ -1,16 +1,16 @@
 
-export default function Jotunheim({schedule}) {
+export default function Jotunheim({schedule, filter}) {
 
-    const stageName = Object.keys(schedule);
+  const stageName = Object.keys(schedule); //this gives me the names (keys) of the stages
     
-  //the following line is destructuring nested object and it gives me back the content from Midgar
-    const { Jotunheim : {mon, tue , wen , thu , fri , sat ,sun}}= schedule;
-  
+  const jotunheim = schedule.Jotunheim[filter];  //dynamic [] gives me every data after Jotunheim in this case the obj days with their object shows
+
+
     return (
       <>
         <h3 className="accent2">{stageName[2]}</h3>
          <div className="show-table">  
-          {mon.map((show=>{
+          {jotunheim.map((show=>{
           //getting the data for just Monday (one day) destructuring object inside objects
           return (
           <>          
