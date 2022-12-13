@@ -8,7 +8,6 @@ function Lineup({bands, filter, schedule}) {
    const jotunheim = schedule.Jotunheim[filter];  
    const vanaheim = schedule.Vanaheim[filter];
 
-console.log(midgard)
    return (
     <>
     <h2>Line up</h2>

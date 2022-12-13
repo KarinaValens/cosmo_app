@@ -23,7 +23,7 @@
 
 * {
   box-sizing: border-box;
-  /* border: dotted 1px hotpink; */
+  border: dotted 1px hotpink;
 }
 
 html,
@@ -186,7 +186,6 @@ h3 {
   padding: 1rem;
 }
 
-
 .button:focus {
   border: 1px solid var(--color-accent1);
 }
@@ -274,23 +273,58 @@ p {
 } */
 
 /* ------------ // Bands Cards // -------------- */
-
-.bands-card {
-  width: 100%;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+.carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
 }
 
+.bands-wraper {
+  /* width: 100%; */
+  margin: 2rem auto;
+  transition: transform 0.3s;
+}
+.bandbutton {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 20;
+  top: 40%;
+}
+.next {
+  right: 0%;
+}
+.bands-card {
+  width: 90%;
+  margin: auto;
+  gap: 2rem;
+  display: flex;
+  /* overflow: hidden; */
+  z-index: 0;
+}
+/* .single-card {
+  height: 25rem;
+} */
 .bandsInfo {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   background-color: blue;
   margin-top: 0%;
   gap: 0.5rem;
   padding: 0.5rem;
-  max-width: 200px;
+  max-width: 15rem;
+  height: 10rem;
 }
-.bandsInfo h5 {
-  margin: 0;
+
+.bandsInfo div:last-child {
+  align-self: center;
+}
+.bandsInfo p {
+  margin: 0.5rem;
+}
+.bandlink {
+  font-size: 0.5rem;
+  padding: 0.5rem;
 }
 
 .bandsInfo button {
