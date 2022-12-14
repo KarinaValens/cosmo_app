@@ -17,34 +17,30 @@ export default function Band ({bands}) {
     <> 
     <div className="bandpage"> 
           <div className="bandPageHero"> 
-        <h1 className="bandPageTitle accent1">{band.name}</h1>
-{/*     <Image alt={band.name} src={band.logo} width={200} height={200} /> */}  
-        {/* if(band.logo){
-                  <Image  src={`https://rough-snowflake-${4981.fly.dev/bands}/logo/${png}`} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
-        }*/}  
-        
-        <img  src={band.logo} alt={""} width={"140"} height={"140"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
-         
-
-  <h4 className="accent1">Band`s Members</h4> 
-        <ul>
-          {band.members.map((member,index)=>{
-          return <li key={index}>{member}</li>
-          })}
-        </ul>
-         <p className="accent3">{band.logoCredits}</p>
+              <h1 className="bandPageTitle accent1">{band.name}</h1>
+           
+              <h4 className="accent1">Band`s Members</h4> 
+              <ul>
+                {band.members.map((member,index)=>{
+                return <li key={index}>{member}</li>
+                })}
+              </ul>
+               <p className="accent3">{band.logoCredits}</p>
           </div>
+          
           <div className="container showDate">
-              <a  href={"/"}>
+                <a  href={"/"}>
                 <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
-              </a>
-              <h2>20 DEC</h2>
-              <p>MIDGARD STAGE</p>
-              <div className="iconContainer"> 
-              <Image src={instagram} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
-              <Image src={facebook} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
-              <Image src={youtube} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
-              </div>
+                </a>
+                <Image src={band.logo} alt={band.name} width={"200"} height={"200"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
+
+                <h2>20 DEC</h2>
+                <p>MIDGARD STAGE</p>
+                <div className="iconContainer"> 
+                <Image src={instagram} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
+                <Image src={facebook} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
+                <Image src={youtube} alt={""} width={"20"} height={"20"} priority sizes="(max-width: 700px) 100vw, 700px" />
+                </div>
           </div>
     </div>
     <div className="bandBio">    
@@ -58,8 +54,8 @@ export default function Band ({bands}) {
 
 
 export async function getStaticPaths(){
-  //const res = await fetch("http://localhost:8080/bands#");
-  const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
+  const res = await fetch("http://localhost:8080/bands#");
+  //const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
   
   const dataBands = await res.json();
   const paths = dataBands.map(band =>{
@@ -83,8 +79,8 @@ export async function getStaticProps(){
   - once we have the data, it put into the component
   - so the component can render with that data inside it  */
 
-  //const res = await fetch("http://localhost:8080/bands#");
-  const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
+  const res = await fetch("http://localhost:8080/bands#");
+  //const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
 
   const data = await res.json();
 

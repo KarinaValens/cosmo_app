@@ -51,7 +51,6 @@ h6 {
 }
 h1 {
   font: 200 6rem/1 var(--font-headings);
-  visibility: hidden;
 }
 h2 {
   font: 400 1.6rem/1 var(--font-headings);
@@ -458,8 +457,9 @@ p {
   .show-table {
     max-width: 80%;
     margin: auto;
-/*     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
- */  }
+    /*     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+ */
+  }
   .show-table li {
     font-size: medium;
   }
