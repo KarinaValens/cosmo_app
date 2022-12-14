@@ -83,8 +83,8 @@ export async function getStaticProps(){
   - once we have the data, it put into the component
   - so the component can render with that data inside it  */
 
-  const res = await fetch("http://localhost:8080/bands#");
-  //const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
+  //const res = await fetch("http://localhost:8080/bands#");
+  const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
 
   const data = await res.json();
 
