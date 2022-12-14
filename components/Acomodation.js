@@ -13,7 +13,7 @@ export default function Acomodation() {
     </div>
     </div>
 
-    <h2 className='title accent3'>Camping area</h2>
+    <h2 className='accent3'>Camping area</h2>
 
     <div className='grid'>
     <div className='card acomodation'>

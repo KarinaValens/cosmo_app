@@ -23,7 +23,7 @@
 
 * {
   box-sizing: border-box;
-  border: dotted 1px hotpink;
+  /* border: dotted 1px hotpink; */
 }
 
 html,
@@ -51,6 +51,7 @@ h6 {
 }
 h1 {
   font: 200 6rem/1 var(--font-headings);
+  visibility: hidden;
 }
 h2 {
   font: 400 1.6rem/1 var(--font-headings);
@@ -100,19 +101,15 @@ h3 {
 }
 
 /* -------------------- // section´s style// -----------------------  */
-.container {
-  padding: 0 1.5rem;
-  flex: 1 1 200px;
-}
-
 .header,
 .bandPageHero {
-  background: hsla(0, 0%, 0%, 0.525) url(../public/media/place_holder.png) no-repeat top;
+  background: hsla(0, 0%, 0%, 0.212) url(../public/media/festival-landing.png) no-repeat center;
   /* This images is a place holder */
   background-size: cover;
   background-blend-mode: multiply;
   text-align: center;
   margin-bottom: 1rem;
+  height: 20rem;
 }
 
 .main {
@@ -150,7 +147,8 @@ h3 {
 }
 
 .title,
-.logo {
+.logo,
+.camping {
   text-align: center;
 }
 
@@ -186,7 +184,9 @@ h3 {
   padding: 1rem;
 }
 
-.button:focus {
+.button:focus,
+.button:hover,
+.active {
   border: 1px solid var(--color-accent1);
 }
 
@@ -196,6 +196,11 @@ h3 {
   margin: 2rem auto;
   line-height: 1.5;
   font-size: 1.5rem;
+}
+.container {
+  width: 85%;
+  margin: auto;
+  flex: 1 1 200px;
 }
 
 .grid,
@@ -219,8 +224,8 @@ h3 {
 
 .show-table {
   max-width: 100%;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
@@ -280,14 +285,13 @@ p {
 }
 
 .bands-wraper {
-  /* width: 100%; */
   margin: 2rem auto;
   transition: transform 0.3s;
 }
 .bandbutton {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  padding: 5px;
   z-index: 20;
   top: 40%;
 }
@@ -295,16 +299,15 @@ p {
   right: 0%;
 }
 .bands-card {
-  width: 90%;
+  width: 85%;
   margin: auto;
-  gap: 2rem;
+  gap: 1rem;
   display: flex;
-  /* overflow: hidden; */
+  align-items: center;
+  justify-content: center;
   z-index: 0;
 }
-/* .single-card {
-  height: 25rem;
-} */
+
 .bandsInfo {
   display: flex;
   justify-content: space-between;
@@ -441,26 +444,35 @@ p {
     font: 300 2rem/1 var(--font-headings);
   }
 
+  .header {
+    height: 30rem;
+  }
+
   .headerDays {
     max-width: 50%;
+  }
+
+  .grid {
+    width: 90%;
   }
   .show-table {
     max-width: 80%;
     margin: auto;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
+/*     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+ */  }
   .show-table li {
     font-size: medium;
   }
 
   .bands li,
-  .tickets-info p,
+  p,
   .tickets-info li {
     font-size: medium;
   }
 
   .flex-container {
     gap: 4rem;
+    justify-content: space-around;
   }
 
   .regular,
@@ -489,17 +501,9 @@ p {
     flex-direction: row-reverse;
   }
 
-  .bandpage div:last-child {
-    max-width: 30%;
+  .bandpage .bandPageHero {
+    width: 80%;
   }
-  /*  .showDate {
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    background-color: var(--color-neutral1);
-    max-width: 25vw;
-    height: 60vw;
-  } */
 }
 /* large tablets and laptop styles */
 @media screen and (min-width: 960px) {

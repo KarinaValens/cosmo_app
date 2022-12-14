@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <div className="header">
         <a  href={"/"}>
-          <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
+          <Image  className="logo" src={dark_theme_logo} alt={""} width={"45"} height={"40"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </a>
         <h1 className="title accent1">COSMO</h1>
         <div className="grid headerDays">
@@ -20,6 +20,8 @@ export default function Header() {
             <p className="accent3">20</p>
             <p className="accent5">21</p>
         </div>
+        <p className="accent1"> A whole week this December</p>
+
     </div>
   )
 }

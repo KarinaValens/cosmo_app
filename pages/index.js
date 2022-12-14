@@ -12,19 +12,10 @@ import Midgard from '../components/Midgard'
 import Vanaheim from '../components/Vanaheim'
 import Jotunheim from '../components/Jotunheim'
 
-export default function Home({schedule}) {
+export default function Home({schedule, bands}) {
 
-  const [bands, setBands]=useState([]);
-  useEffect(()=>{
-  async function fetchBands(){
-    const res= await fetch ("http://localhost:8080/bands")
-    const bands=await res.json();
-    setBands(bands);
-     } fetchBands()},[])
-
-     //const { Midgard : {mon, tue , wen , thu , fri , sat ,sun}}= schedule;
+  //const { Midgard : {mon, tue , wen , thu , fri , sat ,sun}}= schedule;
    const [filter, setFilter] = useState("mon");
-
 
   return (
     <>
@@ -56,18 +47,21 @@ export default function Home({schedule}) {
 }
 
 
-export async function getServerSideProps() {
-  // Get data from api
-  const res = await fetch("http://localhost:8080/schedule");
-  const data = await res.json();
-  // you can do several url 
-  // Return the data inside props
-  return {
-    props: {
-      schedule: data,
-    }
-  }
+
+export async function getServerSideProps(){
+const [scheduleRes, bandsRes] = await Promise.all([
+  //fetch(`http://localhost:8080/schedule`),
+  fetch("https://rough-snowflake-4981.fly.dev/schedule"), //karina URL:  (just in case)
+
+  //fetch(`http://localhost:8080/bands#`)
+  fetch("https://rough-snowflake-4981.fly.dev/bands") //karina URL:  (just in case)
+
+]);
+const [schedule, bands]= await Promise.all([
+  scheduleRes.json(),
+  bandsRes.json()
+])
+
+return { props:{schedule, bands}}
+
 }
-
-
-

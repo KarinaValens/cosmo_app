@@ -8,7 +8,7 @@ export default  function Days({ setFilter}) {
   return (
 <>
     <div className="grid">
-    <button type="button" onClick={()=>setFilter("mon")} className="button border0 accent1">Monday</button>
+    <button type="button" onClick={()=>setFilter("mon")} className="button border0 accent1 active">Monday</button>
     <button type="button" onClick={()=>setFilter("tue")} className="button border0 accent1">Thuesday</button>
     <button type="button" onClick={()=>setFilter("wed")} className="button border0 accent1">Wednesday</button>
     <button type="button" onClick={()=>setFilter("thu")} className="button border0 accent1">Thursday</button>

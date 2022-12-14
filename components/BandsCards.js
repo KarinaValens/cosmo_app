@@ -15,14 +15,14 @@ export default function BandsCards ({bands, schedule}) {
        return (
     <>  
     <div className='carousel'>
-    <button className='button bandbutton prev' onClick={()=>setIndex(count=> count - 1)}>prev</button>
-         <button className='button bandbutton next' onClick={()=>setIndex(count=> count + 1)}>next</button>
+    <button className='button bandbutton prev accent2 border2' onClick={()=>setIndex(count=> count - 1)}>prev</button>
+         <button className='button bandbutton next accent2 border2' onClick={()=>setIndex(count=> count + 1)}>next</button>
 
       <div className='bands-wraper' style={{transform:`translateX(-${index * 100}%)`}}>
 
         <div className='bands-card'  >
           {bands.map((band) => (
-            <div /* key={band.name + Date.now()} */ key={band[index]} className="single-card">            
+            <div key={band[index]} className="single-card">            
                  <Image   src={place_holder} alt={""} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" />
 
            {/* <Image alt={band.name} src={band.logo} width={200} height={200} /> */}
