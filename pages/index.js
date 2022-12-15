@@ -6,7 +6,7 @@ import Filtering from '../components/Filtering'
 import Acomodation from '../components/Acomodation'
 import Lineup from '../components/Lineup'
 import BandsCards from '../components/BandsCards'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import TicketsDiv from '../components/TicketsDiv'
 import Midgard from '../components/Midgard'
 import Vanaheim from '../components/Vanaheim'
@@ -16,6 +16,8 @@ export default function Home({schedule, bands}) {
 
   //const { Midgard : {mon, tue , wen , thu , fri , sat ,sun}}= schedule;
    const [filter, setFilter] = useState("mon");
+   const [search, setSearch] = useState("");
+   const[ genre, setGenre]=useState("");
 
   return (
     <>
@@ -28,11 +30,11 @@ export default function Home({schedule, bands}) {
         <meta name="keywords" content="festival, app, schedule, music, exam, reactjs, nextjs"></meta>
       </Head>       
       <main className='main'>
-        <Filtering/>
+        <Filtering setSearch={setSearch} setGenre={setGenre}/>
         <Days schedule={schedule} setFilter={setFilter}/> 
-        <Midgard schedule={schedule} filter={filter}/>
-        <Vanaheim schedule={schedule} filter={filter}/>
-        <Jotunheim schedule={schedule} filter={filter}/>
+        <Midgard schedule={schedule} filter={filter} search={search} genre={genre}/>
+        <Vanaheim schedule={schedule} filter={filter} search={search}/>
+        <Jotunheim schedule={schedule} filter={filter} search={search}/>
         <Stages/>
         <Acomodation/>
         <Days setFilter={setFilter}/>

@@ -1,5 +1,5 @@
 
-export default function Jotunheim({schedule, filter}) {
+export default function Jotunheim({schedule, filter, search}) {
 
   const stageName = Object.keys(schedule); //this gives me the names (keys) of the stages
     
@@ -12,16 +12,20 @@ export default function Jotunheim({schedule, filter}) {
          <div className="show-table">  
           {jotunheim.map((show=>{
           //getting the data for just Monday (one day) destructuring object inside objects
-          return (
-          <>          
-              <ul >
-                  <li className="accent2" key="z">Act: {show.act}</li> 
-                  <li key="y">starts: {show.start}</li> 
-                  <li key="x">ends:{show.end}</li> 
-              </ul>           
-          </>
-          )
-          }))}</div> 
+          if(search===" ") {
+            return <ul key={`${Math.random()} + ${Date.now()}`}>
+            <li className="accent2">Act: {show.act}</li> 
+            <li>starts: {show.start}</li> 
+            <li>ends:{show.end}</li> 
+        </ul>
+          } else if(show.act.includes(search)){
+            return <ul key={`${Math.random()} + ${Date.now()}`}>
+            <li className="accent2">Act: {show.act}</li> 
+            <li>starts: {show.start}</li> 
+            <li>ends:{show.end}</li>  
+          </ul> 
+          } 
+         }))}</div> 
    
       </>
     )
