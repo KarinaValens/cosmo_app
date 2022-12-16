@@ -6,11 +6,13 @@ import youtube from "/public/media/youtube.png"
 
 import{useRouter} from "next/router"
 
+
 export default function Band ({bands}) {
     const router = useRouter();
     const {name} = router.query
     const band = bands.find(band => band.name === name)
-    console.log(band)
+    //const url= "http://localhost:8080/"//this is the url variable that I am using to get the pictures inside the return
+    const url="https://rough-snowflake-4981.fly.dev/"
     
     return (
     <> 
@@ -31,7 +33,7 @@ export default function Band ({bands}) {
                 <a  href={"/"}>
                 <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
                 </a>
-                <Image src={band.logo} alt={band.name} width={"200"} height={"200"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
+              <Image src={`${band.logo.includes("https://") ? band.logo : url + "/logos/" + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
 
                 <h2>20 DEC</h2>
                 <p>MIDGARD STAGE</p>
@@ -53,8 +55,8 @@ export default function Band ({bands}) {
 
 
 export async function getStaticPaths(){
-  const res = await fetch("http://localhost:8080/bands#");
-  //const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
+  //const res = await fetch("http://localhost:8080/bands#");
+  const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
   
   const dataBands = await res.json();
   const paths = dataBands.map(band =>{
@@ -78,8 +80,8 @@ export async function getStaticProps(){
   - once we have the data, it put into the component
   - so the component can render with that data inside it  */
 
-  const res = await fetch("http://localhost:8080/bands#");
-  //const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
+  //const res = await fetch("http://localhost:8080/bands#");
+  const res = await fetch("https://rough-snowflake-4981.fly.dev/bands"); //karina URL:  (just in case)
 
   const data = await res.json();
 
