@@ -102,7 +102,7 @@ h3 {
 /* -------------------- // section´s style// -----------------------  */
 .header,
 .bandPageHero {
-  background: hsla(0, 0%, 0%, 0.212) url(../public/media/festival-landing.png) no-repeat center;
+  background: hsla(0, 0%, 0%, 0.212) url("../public/media/festivalLanding.png") no-repeat center;
   /* This images is a place holder */
   background-size: cover;
   background-blend-mode: multiply;
