@@ -11,8 +11,9 @@ export default function BandsCards ({bands, schedule}) {
     // I need to print the correct date and time of the band paying
 
     const [index, setIndex]=useState(0);
+    const url= "http://localhost:8080/"
 
-       return (
+    return (
      
     <div className='carousel'>
          <button className='button bandbutton prev accent2 border2' onClick={()=>setIndex(count=> count - 1)}>prev</button>
@@ -22,13 +23,9 @@ export default function BandsCards ({bands, schedule}) {
 
         <div className='bands-card'  >
           {bands.map((band) => (
-            <div key={`${Math.random()} + ${Date.now()}`} className="single-card">            
-             <Image   src={place_holder} alt={""} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" />
+            <div key={`${Math.random()} + ${Date.now()}`} className="single-card">          
+            <Image src={`${band.logo.includes("https://") ? band.logo : url + "/logos/" + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
         
-  
-{/*            <Image src={`http://localhost:8080/bands${band.logo} `} alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
- */}           {/* <Image alt={band.name} src={band.logo} width={200} height={200} /> */}
-          
             <div className='bandsInfo'>
             <div>
             <p className='accent1'>{band.name}</p>
