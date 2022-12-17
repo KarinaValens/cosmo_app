@@ -16,7 +16,8 @@ export default function Filtering({setSearch, setGenre}) {
       id="search"
       name="search"
       required
-      onChange={(e)=>setSearch(e.target.value)}
+      
+      onChange={(e)=>setSearch((e.target.value.charAt(0).toUpperCase())+(e.target.value.substring(1).toLowerCase()))}
       />
 
       </div>
@@ -28,7 +29,7 @@ export default function Filtering({setSearch, setGenre}) {
       id="genre"
       name="genre"
       required
-      onChange={(e)=>SpeechRecognitionResult(e.target.value)}/>
+      onChange={(e)=>setGenre(e.target.value)}/>
       
       </div>
 {/*         <input className="input" type="text" placeholder='FIlter by day'/>
