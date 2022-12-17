@@ -8,13 +8,12 @@ import { useRouter } from "next/router";
 export default function NotFound() {
 const router = useRouter();
 useEffect(() =>{
-setTimeout(() => {
-    router.push("/")
-}, 6000);
-})
+setTimeout(() => {  
+  router.push(`/`)
+},6000)})
 
   return (
-    <div className='not-found'>
+    <div className='container'>      
         <h1>Oooooops...</h1>
         <h2>That page can not be found</h2>
         <p>Go back to the <Link href="/">Home page</Link></p>

@@ -6,12 +6,12 @@ import dark_theme_logo from "../public/media/dark_theme_logo.png" // it is neces
 export default function Header() {
     //it is not necesary to write an unit in the the width and the heigh properties 
   return (
-    <div className="header">
+    <header>
         <a  href={"/"}>
-          <Image  className="logo" src={dark_theme_logo} alt={""} width={"45"} height={"40"} priority sizes="(max-width: 700px) 100vw, 700px" />
+          <Image  className="logo" src={dark_theme_logo} alt={""} width={"50"} height={"45"} priority sizes="(max-width: 700px) 100vw, 700px" />
         </a>
         <h1 className="title accent1">COSMO</h1>
-        <div className="grid headerDays">
+        <div className="bands-card headerDays">
             <p className="accent2">15</p>
             <p className="accent1">16</p>
             <p className="accent7">17</p>
@@ -22,7 +22,7 @@ export default function Header() {
         </div>
         <p className="accent1"> A whole week this December</p>
 
-    </div>
+    </header>
   )
 }
 

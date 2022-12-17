@@ -1,7 +1,5 @@
 import Anchor from "./Anchor";
 
-
-
 export default function Nav() {
   return (
     <>

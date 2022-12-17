@@ -5,7 +5,7 @@ export default function Layout({children}) {
     //the children props are the elements inside the -app.js
   return (
     <>
-    {/* <Header/> */}
+    {/* <Header/> */} 
     {children}
     <Footer/>
     </>

@@ -49,9 +49,9 @@ h5,
 h6 {
   font-family: var(--font-headings);
 }
-h1 {
+/* h1 {
   font: 200 6rem/1 var(--font-headings);
-}
+} */
 h2 {
   font: 400 1.6rem/1 var(--font-headings);
   color: var(--color-accent1);
@@ -100,14 +100,14 @@ h3 {
 }
 
 /* -------------------- // section´s style// -----------------------  */
-.header,
+header,
 .bandPageHero {
   background: hsla(0, 0%, 0%, 0.212) url("../public/media/festivalLanding.png") no-repeat center;
   background-size: cover;
   background-blend-mode: multiply;
   text-align: center;
   margin-bottom: 1rem;
-  height: 20rem;
+  height: 50vh;
 }
 
 .main {
@@ -124,9 +124,10 @@ h3 {
 
 .title {
   margin: 0;
-  font-weight: 300;
-  opacity: 0.3;
+/*   font-weight: 300;
+ */  opacity: 0.2;
   letter-spacing: 0.4%;
+  font: 200 6rem/1 var(--font-headings);
 }
 
 .title a {
@@ -345,8 +346,8 @@ p {
   flex-direction: column;
 }
 
-.tickets-info button {
-  margin-top: 2rem;
+.tickets-info ul {
+  margin-bottom: 3rem;
 }
 
 .tickets-info li {
@@ -430,7 +431,7 @@ p {
 
 /* small tablet styles */
 @media screen and (min-width: 620px) {
-  h1 {
+  .title {
     font: 100 10rem/1.15 var(--font-headings);
   }
 
@@ -442,8 +443,8 @@ p {
     font: 300 2rem/1 var(--font-headings);
   }
 
-  .header {
-    height: 30rem;
+  header {
+    height: 25rem;
   }
 
   .headerDays {
@@ -506,6 +507,13 @@ p {
 }
 /* large tablets and laptop styles */
 @media screen and (min-width: 960px) {
+  header{
+  height: 34rem;
+  }
+  .title {
+    font: 100 18rem/1.15 var(--font-headings);
+  }
+
   .show-table {
     width: 80%;
     margin: auto;

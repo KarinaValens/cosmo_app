@@ -33,7 +33,7 @@ export default function Home({schedule, bands}) {
       <main className='main'>
         <Filtering setSearch={setSearch} setGenre={setGenre}/>
         <Days schedule={schedule} setFilter={setFilter}/> 
-        <Midgard schedule={schedule} filter={filter} search={search} genre={genre}/>
+        <Midgard schedule={schedule} filter={filter} search={search} bands={bands} genre={genre}/>
         <Vanaheim schedule={schedule} filter={filter} search={search}/>
         <Jotunheim schedule={schedule} filter={filter} search={search}/>
         <Stages/>

@@ -13,7 +13,6 @@ export default function Band ({bands}) {
     const band = bands.find(band => band.name === name)
     const url= "http://localhost:8080/"//this is the url variable that I am using to get the pictures inside the return
     //const url="https://rough-snowflake-4981.fly.dev/"
-    
     return (
     <> 
     <div className="bandpage"> 

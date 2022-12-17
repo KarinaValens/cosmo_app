@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function TicketsDiv() {
@@ -23,10 +24,9 @@ export default function TicketsDiv() {
             <li>Exlucive VIP entrance & exit points</li>
             <li>Area with unobstructed view close to the stages</li> 
             <li>Reserved VIP zones and tables </li>
-            <li>Special Bar services</li>
-            and much more
+            <li>Special Bar services. And much more</li>            
             </ul>
-            <button className='button border2 accent1'>BOOK NOW</button>
+           <Link className='button border2 accent1' href={"https://cosmo-festival.netlify.app/tickets"}>BOOK NOW</Link>
     </div>
     </div>
     </>
