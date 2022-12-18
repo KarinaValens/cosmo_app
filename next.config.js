@@ -5,6 +5,6 @@ const nextConfig = {
 
 module.exports = {
   images:{
-    domains: [`placeimg.com`, `localhost`]
+    domains: [`placeimg.com`, `localhost`, `rough-snowflake-4981.fly.dev`]
   }
 }
