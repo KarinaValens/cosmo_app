@@ -4,14 +4,16 @@ import place_holder from "../public/media/place_holder.png"
 import { useState } from 'react';
 import Image from 'next/image';
 
-export default function BandsCards ({bands, schedule}) {
+export default function BandsCards ({bands}) {
    /*  const router = useRouter();
     const {name} = router.query
     const band = bands.find(band => band.name === name) */
     // I need to print the correct date and time of the band paying
 
     const [index, setIndex]=useState(0);
-    const url= "http://localhost:8080/"
+    //const url= "http://localhost:8080/"
+    const url="https://rough-snowflake-4981.fly.dev/"
+
 
     return (
      
