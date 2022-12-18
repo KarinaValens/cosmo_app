@@ -11,8 +11,8 @@ export default function BandsCards ({bands}) {
     // I need to print the correct date and time of the band paying
 
     const [index, setIndex]=useState(0);
-    //const url= "http://localhost:8080/"
-    const url="https://rough-snowflake-4981.fly.dev/"
+    const url= "http://localhost:8080/"
+    //const url="https://rough-snowflake-4981.fly.dev/"
 
 
     return (

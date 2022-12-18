@@ -53,11 +53,11 @@ export default function Home({schedule, bands}) {
 
 export async function getServerSideProps(){
 const [scheduleRes, bandsRes] = await Promise.all([
-  //fetch(`http://localhost:8080/schedule`),
-  fetch("https://rough-snowflake-4981.fly.dev/schedule"), //karina URL:  (just in case)
+  fetch(`http://localhost:8080/schedule`),
+  //fetch("https://rough-snowflake-4981.fly.dev/schedule"), //karina URL:  (just in case)
 
-  //fetch(`http://localhost:8080/bands#`)
-  fetch("https://rough-snowflake-4981.fly.dev/bands") //karina URL:  (just in case)
+  fetch(`http://localhost:8080/bands#`)
+  //fetch("https://rough-snowflake-4981.fly.dev/bands") //karina URL:  (just in case)
 
 ]);
 const [schedule, bands]= await Promise.all([
