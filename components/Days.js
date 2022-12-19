@@ -16,7 +16,6 @@ export default  function Days({ setFilter}) {
     <button type="button" onClick={()=>setFilter("sat")} className="button border0 accent1">Saturaday</button>
     <button type="button" onClick={()=>setFilter("sun")} className="button border0 accent1">Sunday</button>
     </div>
-
     </>)
   
 }
