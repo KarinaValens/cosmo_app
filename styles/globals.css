@@ -124,8 +124,9 @@ header,
 
 .title {
   margin: 0;
-/*   font-weight: 300;
- */  opacity: 0.2;
+  /*   font-weight: 300;
+ */
+  opacity: 0.2;
   letter-spacing: 0.4%;
   font: 200 6rem/1 var(--font-headings);
 }
@@ -419,14 +420,17 @@ p {
 }
 
 .bandPageHero p {
-  font-size: 0.5rem;
-}
-.bandPageHero li {
   font-size: 0.6rem;
+}
+.bandBio p,
+.bandPageHero li {
+  font-size: 0.8rem;
 }
 
 .bandBio {
   padding: 1rem;
+  width: 80%;
+  margin: auto;
 }
 
 /* small tablet styles */
@@ -504,11 +508,19 @@ p {
   .bandpage .bandPageHero {
     width: 80%;
   }
+  .bandPageHero p {
+    font-size: 0.8rem;
+  }
+
+  .bandBio p,
+  .bandPageHero li {
+    font-size: 1.2rem;
+  }
 }
 /* large tablets and laptop styles */
 @media screen and (min-width: 960px) {
-  header{
-  height: 34rem;
+  header {
+    height: 34rem;
   }
   .title {
     font: 100 18rem/1.15 var(--font-headings);

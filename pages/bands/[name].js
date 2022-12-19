@@ -20,7 +20,7 @@ export default function Band ({bands}) {
     return (
     <> 
     <div className="bandpage"> 
-          <div className="bandPageHero" style={{ backgroundImage: `url(${band.logo.includes("https://") ? band.logo : url + "/logos/" + band.logo})`}}> 
+          <div className="bandPageHero" style={{ backgroundImage: `url(${band.logo.includes("https://") ? band.logo : url + `logos/` + band.logo})`, backgroundColor:"hsla(0, 0%, 0%, 0.7)", backgroundBlendMode:'multiply', backgroundPosition:`center` }}> 
 
               <h1 className="bandPageTitle accent1">{band.name}</h1>
            
@@ -30,15 +30,14 @@ export default function Band ({bands}) {
                 return <li key={index}>{member}</li>
                 })}
               </ul>
-               <p className="accent3">{band.logoCredits}</p>
+               <p className="accent3">{band.logoCredits ? band.logoCredits : ""}</p>
           </div>
           
           <div className="container showDate">
                 <a  href={"/"}>
               <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
                 </a>
-{/*               <Image src={`${band.logo.includes("https://") ? band.logo : url + "/logos/" + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
- */}
+
                 <h2>20 DEC</h2>
                 <p>MIDGARD STAGE</p>
                 <div className="iconContainer"> 
