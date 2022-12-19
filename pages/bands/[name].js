@@ -20,7 +20,8 @@ export default function Band ({bands}) {
     return (
     <> 
     <div className="bandpage"> 
-          <div className="bandPageHero"> 
+          <div className="bandPageHero" style={{ backgroundImage: `url(${band.logo.includes("https://") ? band.logo : url + "/logos/" + band.logo})`}}> 
+
               <h1 className="bandPageTitle accent1">{band.name}</h1>
            
               <h4 className="accent1">Band`s Members</h4> 
@@ -34,10 +35,10 @@ export default function Band ({bands}) {
           
           <div className="container showDate">
                 <a  href={"/"}>
-                <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
+              <Image  className="logo" src={dark_theme_logo} alt={""} width={"80"} height={"60"} priority sizes="(max-width: 700px) 100vw, 700px" />
                 </a>
-              <Image src={`${band.logo.includes("https://") ? band.logo : url + "/logos/" + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
-
+{/*               <Image src={`${band.logo.includes("https://") ? band.logo : url + "/logos/" + band.logo}`}   alt={band.name} width={"230"} height={"250"} priority sizes="(max-width: 700px) 100vw, 700px" /> 
+ */}
                 <h2>20 DEC</h2>
                 <p>MIDGARD STAGE</p>
                 <div className="iconContainer"> 
